@@ -2,39 +2,47 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <title>Contacto</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    >
-    <link rel="stylesheet" href="estilos/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de contacto de Álvaro Cabezas, ingeniero chileno interesado en programación, anime y viajes.">
+    <meta name="keywords" content="contacto, correo, redes sociales, ingeniería, anime, viajes">
+    <meta name="author" content="Álvaro Cabezas">
+    <title>Contacto | Álvaro Cabezas</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="estilos/main.css">
+
     <style>
+      /* Fondo animado */
       body {
         animation: gradientBG 15s ease infinite;
         background: linear-gradient(-45deg, #004080, #e4405f, #23a6d5, #23d5ab);
         background-size: 400% 400%;
-        font-family: Arial, sans-serif;
+        font-family: 'Roboto', Arial, sans-serif;
         margin: 0;
         padding: 0;
         color: #333;
+        overflow-x: hidden;
       }
 
       @keyframes gradientBG {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
       }
 
+      /* Contacto */
       .contact-section {
         max-width: 800px;
-        margin: 3rem auto;
+        margin: 6rem auto 3rem auto; /* espacio para navbar fijo */
         padding: 2rem;
         background: #fff;
         border-radius: 8px;
@@ -43,14 +51,8 @@
       }
 
       @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
       }
 
       a {
@@ -68,74 +70,80 @@
         text-align: center;
         padding: 1rem;
         font-size: 0.9rem;
-        color: #555;
+        color: #333;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .contact-section {
+          margin: 8rem 1rem 3rem 1rem;
+          padding: 1.5rem;
+        }
+        .navbar-brand img {
+          height: 35px;
+        }
       }
     </style>
   </head>
+
   <body>
+    <!-- Header -->
     <header class="bg-warning text-white text-center py-5">
       <div class="container">
         <h1 class="h3">Contacto</h1>
       </div>
     </header>
+
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="index.html">
-          <img
-            src="images/me.png"
-            alt="Logo de Mi Sitio"
-            class="me-2 css_images"
-          />
+          <img src="images/me.png" alt="Logo de Álvaro" class="me-2 img-fluid" style="height:40px;">
+          Mi Sitio
         </a>
-        <a class="navbar-brand" href="index.html">Mi Sitio</a>
-
-        <!-- Menu hamburguesa -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Alternar navegación"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="figuras.html">Figuras</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="anime.html">Animes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="acerca.html">Acerca de</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contacto.html">Contacto</a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="figuras.html">Figuras</a></li>
+            <li class="nav-item"><a class="nav-link" href="anime.html">Animes</a></li>
+            <li class="nav-item"><a class="nav-link" href="acerca.html">Acerca de</a></li>
+            <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
           </ul>
         </div>
       </div>
     </nav>
-    <main class="container my-4">
-      <div class="contact-section">
+
+    <!-- Main -->
+    <main class="container">
+      <section class="contact-section animate__animated animate__fadeInUp" data-aos="fade-up">
         <h2>Contacto</h2>
         <p>
           Puedes contactarme por correo electrónico:
-          <a href="mailto:alvaro.cabezas@gmail.com">alvaro.cabezas@gmail.com</a>
+          <a href="mailto:alvaro.cabezas@gmail.com" aria-label="Enviar correo a Álvaro Cabezas">alvaro.cabezas@gmail.com</a>
         </p>
-        <p>O a través de mis redes sociales.</p>
-      </div>
+        <p>O a través de mis redes sociales:</p>
+        <ul>
+          <li><a href="https://www.instagram.com/alvarocabezasgarrido/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://x.com/alvarocabezas" target="_blank" rel="noopener noreferrer">X Ex-Twitter</a></li>
+          <li><a href="https://www.linkedin.com/in/alvaro-cabezas-garrido-267a6545/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </section>
     </main>
-    <footer class="bg-warning text-white text-center py-3">
-      <p>© 2025 Mi web de prueba V2.</p>
+
+    <!-- Footer -->
+    <footer role="contentinfo" class="bg-warning text-dark">
+      <p>© 2025 Álvaro Cabezas. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+    </script>
   </body>
 </html>
