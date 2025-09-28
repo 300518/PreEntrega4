@@ -1,0 +1,45 @@
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3 {
+    color: #004080;
+}
+
+.instagram-link {
+    font-size: 1.5rem;
+    color: #E4405F;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.instagram-link:hover {
+    transform: scale(1.2);
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    padding: 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ccc;
+}
+
+footer {
+    font-size: 0.9rem;
+}
+
+.css_images {
+    width: 40px;
+    height: 40px;
+}

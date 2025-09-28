@@ -1,0 +1,110 @@
+
+// ======= Variables =======
+$primary-color: #004080;
+$text-color: #333;
+$background-color: #f9f9f9;
+$font-stack: Arial, sans-serif;
+$link-color: #E4405F;
+$border-color: #ccc;
+
+// ======= Mixins =======
+@mixin responsive-img {
+  max-width: 100%;
+  height: auto;
+}
+
+@mixin transition($prop, $time, $ease) {
+  transition: #{$prop} #{$time} #{$ease};
+}
+
+@mixin hover-grow {
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// ======= Animaciones =======
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+// ======= Layout =======
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: $font-stack;
+  margin: 0;
+  padding: 0;
+
+  h1, h2, h3 {
+    color: $primary-color;
+  }
+}
+
+.instagram-link {
+  font-size: 1.5rem;
+  color: $link-color;
+  text-decoration: none;
+  @include transition(transform, 0.2s, ease);
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 1rem;
+}
+
+img {
+  @include responsive-img;
+  border: 2px solid $border-color;
+}
+
+footer {
+  font-size: 0.9rem;
+}
+
+.css_images {
+  width: 40px;
+  height: 40px;
+}
+
+.anime-card {
+  @include hover-grow;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+// Ajustes carrusel solo en desktop
+@media (min-width: 992px) {
+  #carruselFiguras {
+    .carousel-item {
+      img {
+        width: auto;
+        max-width: 100%;
+        height: 500px;
+        object-fit: cover;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
